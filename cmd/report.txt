@@ -1,14 +1,14 @@
 Little Testing Tool's report
 
-Total number of analysed keys: 0
-Average length of the keys: 0.00000
+Total number of analysed keys: 5
+Average length of the keys: 10.98333
 
-Longest key's length: 0
-Longest key's position (line): 0
+Longest key's length: 12
+Longest key's position (line): 5
 
-Shortest key's length: 0
-Shortest key's position (line): 0
+Shortest key's length: 3
+Shortest key's position (line): 2
 
-Performance time: 220.859µs
+Performance time: 98.507µs
 
 No duplicates found :)

@@ -106,5 +106,12 @@ func (r Report) Write() {
 func Init() Report {
 	return Report{
 		initTime: time.Now(),
+		min: struct {
+			len   int
+			index int
+		}{
+			len:   999999999999999,
+			index: 0,
+		},
 	}
 }
