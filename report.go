@@ -51,7 +51,7 @@ type Report struct {
 func (r *Report) Update(key string, index int) {
 	length := len(key)
 	r.n++
-	r.avr += float64(length) / float64(r.n)
+	r.avr += float64(length)
 	if length > r.max.len {
 		r.max.len = length
 		r.max.index = index
@@ -85,6 +85,9 @@ func (r Report) Write() {
 
 	// Calculate the time difference
 	diff := time.Now().Sub(r.initTime)
+
+	// Calculate average
+	r.avr /= float64(r.n)
 
 	// Compose report file contents with the template
 	content := fmt.Sprintf(template, r.n, r.avr, r.max.len, r.max.index, r.min.len, r.min.index, diff.String())

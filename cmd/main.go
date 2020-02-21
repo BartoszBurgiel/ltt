@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"ltt"
+	"ltt/dummy"
 	"os"
 	"strings"
 )
@@ -35,6 +36,35 @@ func main() {
 		new := ltt.Init()
 		new.Search(str)
 		new.Write()
+		os.Exit(0)
+	}
+
+	switch argument {
+	case "-gF":
+		// File with first names
+		ltt.GenerateDummyNames("first", dummy.FirstNames)
+		os.Exit(0)
+	case "-gL":
+		// File with last names
+		ltt.GenerateDummyNames("last", dummy.Surnames)
+		os.Exit(0)
+	case "-gN":
+		// File with full names
+		ltt.GenerateFullNames(dummy.FirstNames, dummy.Surnames)
+		os.Exit(0)
+	case "-gW":
+		// File with words
+		ltt.GenerateWords(dummy.Words)
+		os.Exit(0)
+	case "-h":
+		// Help
+		fmt.Println(`* ltt <path-to-keys.txt> - search for duplicates and return _nice_ log file
+* -gF - generate firstNames.txt containing all 1000ish first names seperated by \n
+* -gL - generate lastNames.txt containing all 1000ish last names seperated by \n
+* -gN - generate names.txt containing all 1.000.000ish full names seperated by \n
+* -gW - generate words.txt containing all 1.800.000ish words seperated by \n`)
+	default:
+		fmt.Println("Invalid argument")
 		os.Exit(0)
 	}
 }
