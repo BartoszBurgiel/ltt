@@ -39,6 +39,9 @@ type Report struct {
 
 	// all duplicates among the keys
 	duplicates bytes.Buffer
+
+	// number of all duplicates
+	nDuplicates int
 }
 
 // Update Report struct
@@ -67,6 +70,41 @@ func (r Report) Write() {
 	file, err := os.Create("report.txt")
 	if err != nil {
 		fmt.Println(err)
+		os.Exit(0)
 	}
 	defer file.Close()
+
+	// Calculate the time difference
+	diff := time.Now().Sub(r.initTime)
+
+	// Compose report file contents with the template
+	content := fmt.Sprintf(template, r.n, r.avr, r.max.len, r.max.index, r.min.len, r.min.index, diff.String())
+
+	// Write content to report.txt
+	file.WriteString(content)
+	file.Sync()
+
+	// Check for duplicates
+	if r.duplicates.Len() == 0 {
+		file.WriteString("No duplicates found :)")
+		file.Sync()
+		os.Exit(0)
+	}
+
+	// prepare the duplicate header
+	percentage := 100.0 * float64(r.nDuplicates) / float64(r.n)
+	content = fmt.Sprintf(duplicatesHeader, r.nDuplicates, percentage)
+
+	// Write duplicate header
+	file.WriteString(content)
+
+	file.Write(r.duplicates.Bytes())
+	file.Sync()
+}
+
+// Init ialize the report
+func Init() Report {
+	return Report{
+		initTime: time.Now(),
+	}
 }

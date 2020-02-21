@@ -8,6 +8,6 @@ import (
 func main() {
 	fmt.Println(":c")
 
-	new := ltt.Report{}
-	fmt.Println(new)
+	new := ltt.Init()
+	new.Write()
 }
