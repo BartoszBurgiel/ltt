@@ -10,9 +10,9 @@ Useful to test encryption
     * 1.600.000-ish (non-repeating) random words
 * Analyse provided keys 
     * Search for duplicates among provided keys 
-    * Keys need to be provided in a single file called "keys.txt"
+    * Keys need to be provided in a single file called `keys.txt`
     * each key seperated by `\n`
-    * generate a pretty log file with 
+    * generate a pretty `report.txt` file with 
         * average length of all keys  
         * longest key 
         * shortest key
