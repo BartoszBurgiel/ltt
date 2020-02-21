@@ -20,7 +20,7 @@ Performance time: %s
 var duplicatesHeader string = `--- DUPLICATES FOUND ---
 
 Number of found duplicates: %d
-Percantage of duplicates: %.4f
+Percantage of duplicates: %.4f%%
 
 n    |pos    |
 `

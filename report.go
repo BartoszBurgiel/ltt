@@ -57,11 +57,20 @@ func (r *Report) Update(key string, index int) {
 		r.max.index = index
 		return
 	}
-	if length < r.min.len {
+	if length < r.min.len && length > 0 {
 		r.min.len = length
 		r.min.index = index
 		return
 	}
+}
+
+// AddDuplicate to the duplicate buffer
+func (r *Report) AddDuplicate(key string, index int) {
+	r.nDuplicates++
+
+	// prepare string
+	prep := fmt.Sprintf(duplicateTemplate, r.nDuplicates, index, key)
+	r.duplicates.WriteString(prep)
 }
 
 // Write the report to report.txt file

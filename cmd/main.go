@@ -2,18 +2,39 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"ltt"
+	"os"
+	"strings"
 )
 
 func main() {
-	fmt.Println("Analysing...")
 
-	new := ltt.Init()
+	if len(os.Args) == 1 {
+		fmt.Println("No arguments provided")
+		os.Exit(0)
+	} else if len(os.Args) > 2 {
+		fmt.Println("Too many arguments provided")
+		os.Exit(0)
+	}
 
-	new.Update("hehe", 1)
-	new.Update("hee", 2)
-	new.Update("heheqwe", 3)
-	new.Update("heh", 4)
-	new.Update("hesddsadsahe", 5)
-	new.Write()
+	argument := os.Args[1]
+
+	if argument[0] != '-' {
+		fmt.Println("Reading file's contents...")
+		// Read file's content
+		contents, err := ioutil.ReadFile(argument)
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(0)
+		}
+		contentsStr := string(contents)
+		str := strings.Split(contentsStr, "\n")
+
+		fmt.Println("Analysing...")
+		new := ltt.Init()
+		new.Search(str)
+		new.Write()
+		os.Exit(0)
+	}
 }
