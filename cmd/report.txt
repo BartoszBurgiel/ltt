@@ -1,23 +1,25 @@
 Little Testing Tool's report
 
-Total number of analysed keys: 135684
-Average length of the keys: 634.87879
+Total number of analysed keys: 135678
+Average length of the keys: 634.88
 
 Longest key's length: 789
-Longest key's position (line): 105972
+Longest key's position (line): 105970
 
 Shortest key's length: 450
-Shortest key's position (line): 131709
+Shortest key's position (line): 105970
 
-Performance time: 2m10.399714813s
+Most common character: b 
+	- Number of occourences: 11800856
+	- Percentage of all characters: 0.137%
+	
+Least common character: - 
+	- Number of occourences: 271354 
+	- Percentage of all characters: 0.003%
 
---- DUPLICATES FOUND ---
+Total performance time: 44.940458696s
+	- Analysis duration: 44.940349612s
+	- LTT's preperation: 5.767µs
 
-Number of found duplicates: 4
-Percantage of duplicates: 0.0029%
-
-n    |pos    |
-1    |9      |.[GxU2fb.r5$LbsFc%RnbGpb9Ab8_fmbCXglbU2j4Mnbmlbj3HTcobvXCXUkb%Sj0Wjbinbc4HTUib>nb20l0BTV2sYZ1i1T3W3?4fjb?lbf4fkbo1ambs2i3ijbX0OnbEWc4^SWjbe5gobVjbGTs05WEWnZ*SSjbrX>mb4YGT5X;0K0Jmb4XiWH1UV2WF1Kib(3-.mG]U)f<.e5*Los6cXRi*4rybouhbxERbI=2p9bsZEoTb55]6xs6bJotb;5SVes$b1Z%Z1o;b=VU2>nJb&r/b$6gVJmLbGsvbM3#21V.5>0F4]3D6A6~7ImObmpjbj6vnibX3tp<b84.5bm]b43bs7b0YR6vV>nWb*7bs1b{nbbZVN2bZ6Yw1bVon4bbZBribb1!V,0b3>3_r5bT02Yw3$YPZ%4rm^b:6GNWbB)Gj{&zE!Kbo?GI~bx0668b<C;occ,NB*^bK_8V,1+8V,8_IR4b)lG2cb#*d=.+BZsebE{<gRbcasaLb5v.8fbUVGt.-ABxHvvmFfHtrrurEo=ibZob56sbob5VsbZZobV2nbrb6Vmbsb32V5043667mbpb6nb3pb45mb3sbY6Vnb7sbnbV2ZY1VnbZrb1V033rb0Y3YZ4mb6
-2    |25112  |0{~l*J0bDyJ_wb6GA+^:M.j>~;L;PccJ6~2FpbDXP6+nbNXEXIUP5F5L4_nbEUP1Kpb[2IXGUI5HnbN3)2HUFnbKobF4I0~X~mbLnbJ1F4+Y~3P2GrbGX~1E1P3N1Glb_YIUP5+obFYE4EUP1N5NX+nbDUN6_3GnbD0<ShYgnbb2dpbgXnrb30$ob9mb6Z[0kY-0H~6*T0yDiJSw<6wAs^kMnjz<e?$,o:+d0c77.4LrRb]Y+7npBb$YcY8VB6u6S5iprb[VH2)r2be4$YJVP6KoCb)4*4FV>ovb}pMb15B1bZAoLbdolb]215v0p5,3useb+Yk3x2c4e2;mwbh0uV06ir&biZ!5MVM2D6iY%pUb}Vb7z5Aobb91yVbZGombh3Pr=bHY>s3bZ1}r}bro)bb1{2WZbz7,1?tlKficW0X[}b0SwAcbEUmvebxeH(&bsCE&Dco&Gmjcp/[;Mc1L]Mrcd^J_sbDet}jbMb^BAc6tw^JcDY0$*c~]0-wmvEvBuzsHp,g?v:uct4obk7pbYYV665pbV2rb4YV6ob44Vobpb51Zobob25053sbY3242mb0V6rbZ5V26YpbV75ob1VZob3rbYsb1rbob12Z
-3    |116264 |P*!D1gIbmt!7Objz6{Dbao#T{/$=Cb,=b{{+zabuFc]tbatb>tbk1xobD6atbE8>V:sb72gvb~6JVr311uobz6KV_7/ub~6k0MV[pbn2/ubeZH6%5E651]obx3&ob%5,ubatbG8OubavbD6dub&obIV}rb62B3E8KVr3FrbF6Z0KV+702a7}Y%V]ZOpb:0S4{7!343nob(6RY24t7-Pl!L1DIlme!9Oij66~Dsa~#S{9$^CAH<=]aSb9~L=j_A>PyzcUrvb8pTbar0bH0hmgbR57pTbR7eVNpTb}2mshbJ6&V*2y1Vm/bk5]VF7Ys1b]6IZ2V3nFb31bs9bLYb5(5}5b1Cm}bb2nmHbb5OsybbpMbi7bs0b8sbbH5>r)b$m0b1VLoPbA2n2+73Vs2boab{5b01V]7o3b6RYaVcZ?nlb10*3>7A3,39m7bc6/Y&4b6Ho$gb^E6D^bCmP!dbh2}*dbJ,#2GcpG8<oc1VmdsbDNF_>bnUIdAbgJiL^c0t/OIcOtmnEb;885zcCU$A{c#%a?Dc6dj<Oc!Bm+Ib14!nP-DAxtxrwzAvvoimAHyay~y_wyvrvplrb0mb5pb7Vpb2sb6V21mb5V7sb6ZVnb1sbY5551mb2mb5sbpb7sbsb5rbmbVob227V2ob50V736YVZnb03733mb6Y46
-4    |131181 |![9kNOybfzcfJb&F*?&%T<~/[.~Oc}Y)0^46jb8mbBmb2obulbyT_XClbs1=W}Tw0=1ulbr2BTtlbppbwkb{WBT8mbn5wXvobyX1ob1obykbvXwnbnnb8jbBmb{Ww0p1t2Bmbrnbu1=Twkb}Y=YsnbCT_0yobu12nbBT8jb6ob^Y)Y}T~2[lb~mbLY30*obRkbf5VlbOobs4VY-!=9tNMyOfcc+J[&6*R&cT#b&&_?+?d>2T7cm0<2j6Sm0b.pebhoLb1sIbWnlbrV)ZRnnbi31YsV{2t3jn&b;4xVtnsbTs{bvm~bjY,Vdp:bo7zZ$r.bgZvsBb2s[b?mnbDZTp&b;p6bGmIb7oab}YH2y3Z4zoubBpEb:31VlmLbf0J0Zp:bsV_2grxbI3Grub?VVm)busrb:0[0JVP6lo*bwpXbL0Z2ss?b:mTbO74oXbpsVb?6b0kuN#X1+ZsUYvkXTnuh_7wa/V1PUuOE^YDhZHFDy%H*OF5^2=!1.*Ts&6*=&8JmcNfzyjN!96!-vmuEtBnzsHgbu?t>scn2jmbpbobsbnbVZnb3YV23nb4VnbsbmbYVpb7ZrbZsbsbmbZpbpbmbobY234obpb3Vmb00pbV2rb3rbVmbsb00V6obpb02sbmb7obsb60
+	
+No duplicates found :)

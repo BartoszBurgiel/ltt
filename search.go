@@ -7,6 +7,7 @@ import (
 
 // Search for duplicates upon a slice of strings
 func (r *Report) Search(objs []string) {
+	start := time.Now()
 	opTime := time.Now()
 	length := len(objs)
 	for i := 0; i < length; i++ {
@@ -22,4 +23,7 @@ func (r *Report) Search(objs []string) {
 		r.Update(objs[i], i+1)
 	}
 	fmt.Println("")
+
+	// Set analysis time
+	r.AnalysisTime = time.Now().Sub(start).String()
 }
