@@ -14,8 +14,14 @@ import (
 func (r *Report) Update(key string, index int) {
 
 	// Add values to chars
-	for _, b := range key {
+	for i, b := range key {
 		r.chars[byte(b)]++
+
+		// If current position not existant -> add
+		if len(r.positions) <= i {
+			r.positions = append(r.positions, pos{})
+		}
+		r.positions[i][byte(b)]++
 	}
 
 	length := len(key)
@@ -93,6 +99,9 @@ func Init() Report {
 		chars: make(map[byte]int),
 		LeastChar: specialChar{
 			N: 999999999999999,
+		},
+		LPC: similarityChar{
+			Occ: 99999999999999,
 		},
 	}
 }

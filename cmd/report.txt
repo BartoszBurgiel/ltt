@@ -7,19 +7,28 @@ Longest key's length: 789
 Longest key's position (line): 105970
 
 Shortest key's length: 450
-Shortest key's position (line): 105970
+Shortest key's position (line): 131703
 
-Most common character: b 
+Most common character: 'b' 
 	- Number of occourences: 11800856
+	- (statistically) Number of occourences in every key: 86.977
 	- Percentage of all characters: 0.137%
 	
-Least common character: - 
+Least common character: '-' 
 	- Number of occourences: 271354 
+	- (statistically) Number of occourences in every key: 2
 	- Percentage of all characters: 0.003%
 
-Total performance time: 44.940458696s
-	- Analysis duration: 44.940349612s
-	- LTT's preperation: 5.767µs
+Similarity index: 11.176%
+	- Highest similarity index of a position: 98.791%
+		- 'b' on position 7 -> 134037 occourences
+	- Lowest similarity index of a position: 0.001%
+		- 'l' on position 0 -> 1 occourences
+	- Standard abbreviation index of a position: 5.091%
 
-	
+Total performance time: 54.884372821s
+	- Analysis duration: 54.882410618s
+	- LTT's preperation: 1.834952ms
+
+
 No duplicates found :)

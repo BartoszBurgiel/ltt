@@ -31,8 +31,14 @@ func (r *Report) prepare() {
 	r.MostChar.Perc = float64(r.MostChar.N) / float64(r.nChars)
 	r.LeastChar.Perc = float64(r.LeastChar.N) / float64(r.nChars)
 
+	r.MostChar.NWords = float64(r.MostChar.N) / float64(r.N)
+	r.LeastChar.NWords = float64(r.LeastChar.N) / float64(r.N)
+
 	// round the variables
-	round(&r.Avr, &r.MostChar.Perc, &r.LeastChar.Perc)
+	round(&r.Avr, &r.MostChar.Perc, &r.LeastChar.Perc, &r.LeastChar.NWords, &r.MostChar.NWords)
+
+	// calculate similarity index
+	r.calculateSimilarities()
 
 	// Add preperation duration
 	r.PrepTime = time.Now().Sub(start).String()
