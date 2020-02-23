@@ -29,6 +29,8 @@ func main() {
 			fmt.Println(err)
 			os.Exit(0)
 		}
+
+		// Divide to []string
 		contentsStr := string(contents)
 		str := strings.Split(contentsStr, "\n")
 

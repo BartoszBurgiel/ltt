@@ -24,14 +24,23 @@ func (r *Report) Update(key string, index int) {
 		r.positions[i][byte(b)]++
 	}
 
+	// Precalculated length
 	length := len(key)
+
+	// Increase N
 	r.N++
+
+	// Add length to avr
 	r.Avr += float64(length)
+
+	// check if new longest
 	if length > r.Max.Len {
 		r.Max.Len = length
 		r.Max.Index = index
 		return
 	}
+
+	// check if new shortest
 	if length < r.Min.Len && length > 0 {
 		r.Min.Len = length
 		r.Min.Index = index
@@ -61,10 +70,11 @@ func (r Report) Write() {
 	// Precalculate the numbers
 	r.prepare()
 
+	// create the template
+	tmpl, err := template.New("test").Parse(reportTemplate)
+
 	// Calculate the time difference
 	r.PerformanceTime = time.Now().Sub(r.initTime).String()
-
-	tmpl, err := template.New("test").Parse(reportTemplate)
 
 	// Compose report file contents with the template
 	err = tmpl.Execute(file, r)
