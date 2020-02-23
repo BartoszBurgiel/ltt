@@ -22,12 +22,12 @@ Least common character: '{{.LeastChar.B}}'
 	- (statistically) Number of occourences in every key: {{.LeastChar.NWords}}
 	- Percentage of all characters: {{.LeastChar.Perc}}%
 
-Similarity index: {{.Similarity}}%
-	- Highest similarity index of a position: {{.HPC.Similarity}}%
+Similarity: {{.Similarity}}%
+	- Highest similarity of a position: {{.HPC.Similarity}}%
 		- '{{.HPC.B}}' on position {{.HPC.Pos}} -> {{.HPC.Occ}} occourences
-	- Lowest similarity index of a position: {{.LPC.Similarity}}%
+	- Lowest similarity of a position: {{.LPC.Similarity}}%
 		- '{{.LPC.B}}' on position {{.LPC.Pos}} -> {{.LPC.Occ}} occourences
-	- Standard abbreviation index of a position: {{.StandardAbbrvSim}}%
+	- Standard abbreviation of the positions: {{.StandardAbbrvSim}}
 
 Total performance time: {{.PerformanceTime}}
 	- Analysis duration: {{.AnalysisTime}}
