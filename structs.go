@@ -25,6 +25,9 @@ type Report struct {
 	// number of key's scanned
 	N int
 
+	// Formated N
+	Nform string
+
 	// shortest key by length
 	Min key
 
@@ -36,6 +39,9 @@ type Report struct {
 
 	// number of all duplicates
 	nDuplicates int
+
+	// Formatted nDuplicates
+	nDuplicatesForm string
 
 	// number of each character occuring
 	chars map[byte]int
@@ -74,6 +80,9 @@ type specialChar struct {
 	// occourences
 	N int
 
+	// Formatted N
+	Nform string
+
 	// statistical occourences per word
 	NWords float64
 
@@ -88,6 +97,9 @@ type key struct {
 
 	// key's index
 	Index int
+
+	// key's index formatted
+	IndexForm string
 }
 
 // pos will be an array where each index
@@ -104,9 +116,15 @@ type similarityChar struct {
 	// position
 	Pos int
 
+	// Formatted position
+	PosForm string
+
 	// actual similarity
 	Similarity float64
 
 	// total occourences of the char
 	Occ int
+
+	// Formatted Occ
+	OccForm string
 }

@@ -2,6 +2,7 @@ package ltt
 
 import (
 	"math"
+	"strconv"
 	"time"
 )
 
@@ -40,8 +41,48 @@ func (r *Report) prepare() {
 	// calculate similarity index
 	r.calculateSimilarities()
 
+	// Format the integers
+	r.format()
+
 	// Add preperation duration
 	r.PrepTime = time.Now().Sub(start).String()
+}
+
+// Format all integers that need to be formatted
+// -> add commas
+func (r *Report) format() {
+
+	// formatting function
+	form := func(n int) (out string) {
+
+		// convert to string
+		nn := strconv.Itoa(n)
+
+		for i := 0; i < len(nn); i++ {
+			out += string(nn[i])
+
+			// at every 3rd add ','
+			if (len(nn)-1-i)%3 == 0 && i != len(nn)-1 {
+				out += ","
+			}
+		}
+		return out
+	}
+
+	r.Nform = form(r.N)
+	r.nDuplicatesForm = form(r.nDuplicates)
+
+	r.HPC.OccForm = form(r.HPC.Occ)
+	r.HPC.PosForm = form(r.HPC.Pos)
+
+	r.LPC.OccForm = form(r.LPC.Occ)
+	r.LPC.PosForm = form(r.LPC.Pos)
+
+	r.LeastChar.Nform = form(r.LeastChar.N)
+	r.MostChar.Nform = form(r.MostChar.N)
+
+	r.Max.IndexForm = form(r.Max.Index)
+	r.Min.IndexForm = form(r.Min.Index)
 }
 
 func round(n ...*float64) {

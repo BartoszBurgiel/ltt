@@ -3,30 +3,30 @@ package ltt
 // report template
 var reportTemplate string = `Little Testing Tool's report
 
-Total number of analysed keys: {{.N}}
+Total number of analysed keys: {{.Nform}}
 Average length of the keys: {{.Avr}}
 
 Longest key's length: {{.Max.Len}}
-Longest key's position (line): {{.Max.Index}}
+Longest key's position (line): {{.Max.IndexForm}}
 
 Shortest key's length: {{.Min.Len}}
-Shortest key's position (line): {{.Min.Index}}
+Shortest key's position (line): {{.Min.IndexForm}}
 
 Most common character: '{{.MostChar.B}}' 
-	- Number of occourences: {{.MostChar.N}}
+	- Number of occourences: {{.MostChar.Nform}}
 	- (statistically) Number of occourences in every key: {{.MostChar.NWords}}
 	- Percentage of all characters: {{.MostChar.Perc}}%
 	
 Least common character: '{{.LeastChar.B}}' 
-	- Number of occourences: {{.LeastChar.N}} 
+	- Number of occourences: {{.LeastChar.Nform}} 
 	- (statistically) Number of occourences in every key: {{.LeastChar.NWords}}
 	- Percentage of all characters: {{.LeastChar.Perc}}%
 
 Similarity: {{.Similarity}}%
 	- Highest similarity of a position: {{.HPC.Similarity}}%
-		- '{{.HPC.B}}' on position {{.HPC.Pos}} -> {{.HPC.Occ}} occourences
+		- '{{.HPC.B}}' on position {{.HPC.PosForm}} with {{.HPC.OccForm}} occourences
 	- Lowest similarity of a position: {{.LPC.Similarity}}%
-		- '{{.LPC.B}}' on position {{.LPC.Pos}} -> {{.LPC.Occ}} occourences
+		- '{{.LPC.B}}' on position {{.LPC.PosForm}} with {{.LPC.OccForm}} occourences
 	- Standard abbreviation of the positions: {{.StandardAbbrvSim}}
 
 Total performance time: {{.PerformanceTime}}
