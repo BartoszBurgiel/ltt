@@ -21,14 +21,14 @@ Least common character: '-'
 
 Similarity: 11.176%
 	- Highest similarity of a position: 98.791%
-		- 'b' on position 7 -> 134,037 occourences
+		- 'b' on position 7 with 134,037 occourences
 	- Lowest similarity of a position: 0.001%
-		- 'R' on position 0 -> 1 occourences
+		- 'R' on position 0 with 1 occourences
 	- Standard abbreviation of the positions: 5.091
 
-Total performance time: 2m24.938326248s
-	- Analysis duration: 2m24.934147223s
-	- LTT's preperation: 4.048278ms
+Total performance time: 2m13.220281711s
+	- Analysis duration: 2m13.217232858s
+	- LTT's preperation: 2.577438ms
 
 
 No duplicates found :)

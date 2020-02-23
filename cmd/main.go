@@ -34,6 +34,11 @@ func main() {
 		contentsStr := string(contents)
 		str := strings.Split(contentsStr, "\n")
 
+		if len(str) <= 1 {
+			fmt.Println("To few keys in keys.txt")
+			os.Exit(0)
+		}
+
 		fmt.Println("Analysing...")
 		new := ltt.Init()
 		new.Search(str)
@@ -60,7 +65,7 @@ func main() {
 		os.Exit(0)
 	case "-h":
 		// Help
-		fmt.Println(`* ltt <path-to-keys.txt> - search for duplicates and return _nice_ log file
+		fmt.Println(`* ltt <path-to-keys.txt> - search for duplicates and return _nice_ report.txt file
 * -gF - generate firstNames.txt containing all 1000ish first names seperated by \n
 * -gL - generate lastNames.txt containing all 1000ish last names seperated by \n
 * -gN - generate names.txt containing all 1.000.000ish full names seperated by \n
