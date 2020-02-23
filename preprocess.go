@@ -1,6 +1,7 @@
 package ltt
 
 import (
+	"fmt"
 	"math"
 	"strconv"
 	"time"
@@ -8,8 +9,12 @@ import (
 
 // Precalculate and prepare all relevant information
 // about scanned keys (clean up the Write() method)
-func (r *Report) prepare() {
+func (r *Report) prepare(keys []string) {
 	start := time.Now()
+	fmt.Println("Calculating data...")
+
+	// GatherData for the report
+	r.GatherData(keys)
 
 	// Calculate average
 	r.Avr /= float64(r.N)
@@ -88,5 +93,13 @@ func (r *Report) format() {
 func round(n ...*float64) {
 	for _, nn := range n {
 		*nn = math.Round((*nn)*1000) / 1000
+	}
+}
+
+// GatherData gathers data for the report
+// that will be analysed later on
+func (r *Report) GatherData(keys []string) {
+	for i, key := range keys {
+		r.Update(key, i)
 	}
 }

@@ -29,8 +29,6 @@ func (r *Report) Search(objs []string) {
 				}
 			}
 		}
-		// Update report
-		r.Update(objs[i], i+1)
 	}
 	fmt.Println("")
 

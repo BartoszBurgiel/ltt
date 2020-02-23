@@ -42,7 +42,7 @@ func main() {
 		fmt.Println("Analysing...")
 		new := ltt.Init()
 		new.Search(str)
-		new.Write()
+		new.Write(str)
 		os.Exit(0)
 	}
 

@@ -58,7 +58,7 @@ func (r *Report) AddDuplicate(key string, index int) {
 }
 
 // Write the report to report.txt file
-func (r Report) Write() {
+func (r Report) Write(keys []string) {
 	// create report.txt
 	file, err := os.Create("report.txt")
 	if err != nil {
@@ -68,7 +68,7 @@ func (r Report) Write() {
 	defer file.Close()
 
 	// Precalculate the numbers
-	r.prepare()
+	r.prepare(keys)
 
 	// create the template
 	tmpl, err := template.New("test").Parse(reportTemplate)

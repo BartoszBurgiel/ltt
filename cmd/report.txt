@@ -4,10 +4,10 @@ Total number of analysed keys: 135,678
 Average length of the keys: 634.88
 
 Longest key's length: 789
-Longest key's position (line): 105,970
+Longest key's position (line): 105,969
 
 Shortest key's length: 450
-Shortest key's position (line): 131,703
+Shortest key's position (line): 131,702
 
 Most common character: 'b' 
 	- Number of occourences: 11,800,856
@@ -26,9 +26,9 @@ Similarity: 11.176%
 		- 'R' on position 0 with 1 occourences
 	- Standard abbreviation of the positions: 5.091
 
-Total performance time: 2m13.220281711s
-	- Analysis duration: 2m13.217232858s
-	- LTT's preperation: 2.577438ms
+Total performance time: 48.882503885s
+	- Analysis duration: 35.40366658s
+	- LTT's preperation: 13.478222686s
 
 
 No duplicates found :)
