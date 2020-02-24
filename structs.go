@@ -19,6 +19,12 @@ type Report struct {
 	// duration of the preparation
 	PrepTime string
 
+	// duration of the data gathering
+	GatheringDataTime string
+
+	// duration of the calculation
+	CalculationTime string
+
 	// average length of a key
 	Avr float64
 
@@ -69,6 +75,18 @@ type Report struct {
 
 	// Standart Abbriviation upon the similarities
 	StandardAbbrvSim float64
+
+	// Key with the highest complexity
+	HC complexity
+
+	// Key with the lowest complexity
+	LC complexity
+
+	// Average complexity of all keys
+	Complexity float64
+
+	// Complexity map
+	com com
 }
 
 // specialChar holds all relevant information
@@ -107,6 +125,11 @@ type key struct {
 // it stores all occourences of the bytes
 type pos map[byte]int
 
+// com represents the complexity of each key
+// map's keys represents the keys' indexes
+// map's values hold the data about every key
+type com map[int]*complexityKey
+
 // stores all information about a char
 // at certain position with certain similarity
 type similarityChar struct {
@@ -127,4 +150,28 @@ type similarityChar struct {
 
 	// Formatted Occ
 	OccForm string
+}
+
+// complexityKey stores all data needed to calculate
+// the complexity of a key
+type complexityKey struct {
+
+	// length of the key
+	len int
+
+	// number of occurences of every character
+	chars map[rune]int
+}
+
+// stores information about the general complexity of a
+// certain key
+type complexity struct {
+	// Complexity value
+	Complexity float64
+
+	// Position
+	Position int
+
+	// Formatted position
+	PositionForm string
 }

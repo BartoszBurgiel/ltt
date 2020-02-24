@@ -22,16 +22,24 @@ Least common character: '{{.LeastChar.B}}'
 	- (statistically) Number of occourences in every key: {{.LeastChar.NWords}}
 	- Percentage of all characters: {{.LeastChar.Perc}}%
 
-Similarity: {{.Similarity}}%
+Similarity among the keys: {{.Similarity}}%
 	- Highest similarity of a position: {{.HPC.Similarity}}%
 		- '{{.HPC.B}}' on position {{.HPC.PosForm}} with {{.HPC.OccForm}} occourences
 	- Lowest similarity of a position: {{.LPC.Similarity}}%
 		- '{{.LPC.B}}' on position {{.LPC.PosForm}} with {{.LPC.OccForm}} occourences
 	- Standard abbreviation of the positions: {{.StandardAbbrvSim}}
 
+Average complexity of the keys: {{.Complexity}}%
+	- Highest complexity of a key: {{.HC.Complexity}}%
+		- On position {{.HC.PositionForm}}
+	- Lowest complexity of a key: {{.LC.Complexity}}%
+		- On position {{.LC.PositionForm}}
+
 Total performance time: {{.PerformanceTime}}
-	- Analysis duration: {{.AnalysisTime}}
+	- Duplicates search: {{.AnalysisTime}}
 	- LTT's preperation: {{.PrepTime}}
+		- Data gathering: {{.GatheringDataTime}}
+		- Calculation Time: {{.CalculationTime}}
 
 
 `

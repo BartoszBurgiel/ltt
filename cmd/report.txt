@@ -1,7 +1,7 @@
 Little Testing Tool's report
 
-Total number of analysed keys: 135,678
-Average length of the keys: 634.88
+Total number of analysed keys: 135,677
+Average length of the keys: 634.884
 
 Longest key's length: 789
 Longest key's position (line): 105,969
@@ -11,7 +11,7 @@ Shortest key's position (line): 131,702
 
 Most common character: 'b' 
 	- Number of occourences: 11,800,856
-	- (statistically) Number of occourences in every key: 86.977
+	- (statistically) Number of occourences in every key: 86.978
 	- Percentage of all characters: 0.137%
 	
 Least common character: '-' 
@@ -19,16 +19,24 @@ Least common character: '-'
 	- (statistically) Number of occourences in every key: 2
 	- Percentage of all characters: 0.003%
 
-Similarity: 11.176%
+Similarity among the keys: 11.176%
 	- Highest similarity of a position: 98.791%
 		- 'b' on position 7 with 134,037 occourences
 	- Lowest similarity of a position: 0.001%
 		- 'R' on position 0 with 1 occourences
 	- Standard abbreviation of the positions: 5.091
 
-Total performance time: 48.882503885s
-	- Analysis duration: 35.40366658s
-	- LTT's preperation: 13.478222686s
+Average complexity of the keys: 13.652%
+	- Highest complexity of a key: 21.797%
+		- On position 131,906
+	- Lowest complexity of a key: 6.514%
+		- On position 97,916
+
+Total performance time: 1m9.650765817s
+	- Analysis duration: 45.335515424s
+	- LTT's preperation: 24.314689382s
+		- Data gathering: 23.924407903s
+		- Calculation Time: 390.156639ms
 
 
 No duplicates found :)

@@ -11,10 +11,14 @@ import (
 // about scanned keys (clean up the Write() method)
 func (r *Report) prepare(keys []string) {
 	start := time.Now()
-	fmt.Println("Calculating data...")
+	fmt.Println("Analysing keys...")
 
 	// GatherData for the report
 	r.GatherData(keys)
+
+	fmt.Println("Calculating...")
+
+	startCalculation := time.Now()
 
 	// Calculate average
 	r.Avr /= float64(r.N)
@@ -40,14 +44,19 @@ func (r *Report) prepare(keys []string) {
 	r.MostChar.NWords = float64(r.MostChar.N) / float64(r.N)
 	r.LeastChar.NWords = float64(r.LeastChar.N) / float64(r.N)
 
-	// round the variables
-	round(&r.Avr, &r.MostChar.Perc, &r.LeastChar.Perc, &r.LeastChar.NWords, &r.MostChar.NWords)
-
 	// calculate similarity index
 	r.calculateSimilarities()
 
+	// calculate the complexity of the keys
+	r.calculateComplexity()
+
+	// round the variables
+	round(&r.Avr, &r.MostChar.Perc, &r.LeastChar.Perc, &r.LeastChar.NWords, &r.MostChar.NWords, &r.LC.Complexity, &r.HC.Complexity, &r.Complexity)
+
 	// Format the integers
 	r.format()
+
+	r.CalculationTime = time.Now().Sub(startCalculation).String()
 
 	// Add preperation duration
 	r.PrepTime = time.Now().Sub(start).String()
@@ -74,6 +83,8 @@ func (r *Report) format() {
 		return out
 	}
 
+	// Format the variables
+
 	r.Nform = form(r.N)
 	r.nDuplicatesForm = form(r.nDuplicates)
 
@@ -88,6 +99,9 @@ func (r *Report) format() {
 
 	r.Max.IndexForm = form(r.Max.Index)
 	r.Min.IndexForm = form(r.Min.Index)
+
+	r.LC.PositionForm = form(r.LC.Position)
+	r.HC.PositionForm = form(r.HC.Position)
 }
 
 func round(n ...*float64) {
@@ -99,7 +113,14 @@ func round(n ...*float64) {
 // GatherData gathers data for the report
 // that will be analysed later on
 func (r *Report) GatherData(keys []string) {
+	start := time.Now()
+	fmt.Println("Gathering additional data...")
 	for i, key := range keys {
-		r.Update(key, i)
+
+		// If key not empty
+		if len(key) != 0 {
+			r.Update(key, i)
+		}
 	}
+	r.GatheringDataTime = time.Now().Sub(start).String()
 }

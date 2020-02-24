@@ -20,12 +20,25 @@ Useful to test encryption
         * most common character 
         * least common character
         * similarity among the keys
+        * average complexity of all keys
         * time to perform 
 * It's very cool in general
 
 # Similarity calculation 
 Similarity calculator takes the average of the most commonly occouring letters on each position of the key
 <a href="https://www.codecogs.com/eqnedit.php?latex=\sum_{i=0}^{n}&space;\frac{highestOccourance_i}{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum_{i=0}^{n}&space;\frac{highestOccourance_i}{n}" title="\sum_{i=0}^{n} \frac{highestOccourance_i}{n}" /></a> 
+
+# Complexity 
+Complexity value is the quotient of the number of occurences of the most common character in a key and the length of the key itself 
+
+Example: **cactus**
+    the number of occurences of the most common character: 2 ('c')
+    complexity = 2/6 = 33.3%
+
+Example: **aaaaaa**
+    the number of occurences of the most common character: 6 ('a')
+    complexity = 6/6 = 100%
+
 
 ### How to use
 * `ltt <path-to-keys.txt>` - search for duplicates and return _nice_ log file

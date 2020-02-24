@@ -39,8 +39,8 @@ func main() {
 			os.Exit(0)
 		}
 
-		fmt.Println("Analysing...")
 		new := ltt.Init()
+		fmt.Println("Searching duplicates...")
 		new.Search(str)
 		new.Write(str)
 		os.Exit(0)

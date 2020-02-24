@@ -13,6 +13,9 @@ import (
 // and update the avr length
 func (r *Report) Update(key string, index int) {
 
+	// create the struct on index in the map
+	r.com[index] = &complexityKey{0, make(map[rune]int)}
+
 	// Add values to chars
 	for i, b := range key {
 		r.chars[byte(b)]++
@@ -22,10 +25,13 @@ func (r *Report) Update(key string, index int) {
 			r.positions = append(r.positions, pos{})
 		}
 		r.positions[i][byte(b)]++
+
+		r.com[index].chars[b]++
 	}
 
 	// Precalculated length
 	length := len(key)
+	r.com[index].len = length
 
 	// Increase N
 	r.N++
@@ -107,11 +113,15 @@ func Init() Report {
 			Index: 0,
 		},
 		chars: make(map[byte]int),
+		com:   make(map[int]*complexityKey),
 		LeastChar: specialChar{
 			N: 999999999999999,
 		},
 		LPC: similarityChar{
 			Occ: 99999999999999,
+		},
+		LC: complexity{
+			Complexity: 9999999999999,
 		},
 	}
 }
