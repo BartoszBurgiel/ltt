@@ -3,6 +3,7 @@ package ltt
 import (
 	"fmt"
 	"os"
+	"strconv"
 	"text/template"
 	"time"
 )
@@ -105,9 +106,11 @@ func (r Report) Write(keys []string) {
 }
 
 // Init ialize the report
-func Init() Report {
+func Init(fileName string) Report {
 	return Report{
-		initTime: time.Now(),
+		FileName:     fileName,
+		AnalysisDate: formatDate(time.Now().Date()),
+		initTime:     time.Now(),
 		Min: key{
 			Len:   999999999999999,
 			Index: 0,
@@ -124,4 +127,20 @@ func Init() Report {
 			Complexity: 9999999999999,
 		},
 	}
+}
+
+// Format date returned from time.Date()
+// and convert it to a clean string
+func formatDate(year int, month time.Month, day int) (date string) {
+
+	// add day
+	date += strconv.Itoa(day) + " "
+
+	// add month
+	date += month.String() + " "
+
+	// add year
+	date += strconv.Itoa(year)
+
+	return date
 }

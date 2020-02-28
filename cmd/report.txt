@@ -1,4 +1,7 @@
-Little Testing Tool's report
+Little Testing Tool's report 
+
+File: keys.txt
+Date: 29 February 2020
 
 Total number of analysed keys: 135,677
 Average length of the keys: 634.884
@@ -32,11 +35,11 @@ Average complexity of the keys: 13.652%
 	- Lowest complexity of a key: 6.514%
 		- On position 97,916
 
-Total performance time: 1m9.650765817s
-	- Analysis duration: 45.335515424s
-	- LTT's preperation: 24.314689382s
-		- Data gathering: 23.924407903s
-		- Calculation Time: 390.156639ms
+Total performance time: 1m14.083602249s
+	- Duplicates search: 40.669004141s
+	- LTT's preperation: 33.413974857s
+		- Data gathering: 33.027042937s
+		- Calculation Time: 386.856777ms
 
 
 No duplicates found :)

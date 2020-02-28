@@ -1,7 +1,10 @@
 package ltt
 
 // report template
-var reportTemplate string = `Little Testing Tool's report
+var reportTemplate string = `Little Testing Tool's report 
+
+File: {{.FileName}}
+Date: {{.AnalysisDate}}
 
 Total number of analysed keys: {{.Nform}}
 Average length of the keys: {{.Avr}}
@@ -27,7 +30,7 @@ Similarity among the keys: {{.Similarity}}%
 		- '{{.HPC.B}}' on position {{.HPC.PosForm}} with {{.HPC.OccForm}} occourences
 	- Lowest similarity of a position: {{.LPC.Similarity}}%
 		- '{{.LPC.B}}' on position {{.LPC.PosForm}} with {{.LPC.OccForm}} occourences
-	- Standard abbreviation of the positions: {{.StandardAbbrvSim}}
+	- Standard deviation of the similarities: {{.StandardDevSim}} [%]
 
 Average complexity of the keys: {{.Complexity}}%
 	- Highest complexity of a key: {{.HC.Complexity}}%

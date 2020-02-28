@@ -11,6 +11,7 @@ import (
 
 func main() {
 
+	// Check arguments
 	if len(os.Args) == 1 {
 		fmt.Println("No arguments provided")
 		os.Exit(0)
@@ -19,6 +20,7 @@ func main() {
 		os.Exit(0)
 	}
 
+	// Get the filename
 	argument := os.Args[1]
 
 	if argument[0] != '-' {
@@ -39,7 +41,7 @@ func main() {
 			os.Exit(0)
 		}
 
-		new := ltt.Init()
+		new := ltt.Init(argument)
 		fmt.Println("Searching duplicates...")
 		new.Search(str)
 		new.Write(str)

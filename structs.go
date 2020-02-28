@@ -7,6 +7,13 @@ import (
 
 // Report contains all informations about the analized keys
 type Report struct {
+
+	// name of the analysing file
+	FileName string
+
+	// date of the analysis
+	AnalysisDate string
+
 	// time of the begin of the analysis
 	initTime time.Time
 
@@ -73,8 +80,8 @@ type Report struct {
 	// Lowest similarity char with it's position
 	LPC similarityChar
 
-	// Standart Abbriviation upon the similarities
-	StandardAbbrvSim float64
+	// Standart Deviation upon the similarities
+	StandardDevSim float64
 
 	// Key with the highest complexity
 	HC complexity

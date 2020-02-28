@@ -1,5 +1,6 @@
 package ltt
 
+// calculate in how far are all keys similar to each other
 func (r *Report) calculateSimilarities() {
 	// stores the max percentage of each position
 	percentages := []float64{}
@@ -47,18 +48,19 @@ func (r *Report) calculateSimilarities() {
 
 	avr /= float64(len(percentages))
 
-	// Calculate the standart abbriviation
+	// Calculate the standart deviation
 	sA := 0.0
 	for _, p := range percentages {
 		sA += abs(avr - p)
 	}
 	sA /= float64(len(percentages))
 
+	// Multiply by 100 to get the percantages
 	r.Similarity = avr * 100
 	r.LPC.Similarity = lo * 100
 	r.HPC.Similarity = hi * 100
-	r.StandardAbbrvSim = sA * 100
-	round(&r.Similarity, &r.LPC.Similarity, &r.HPC.Similarity, &r.StandardAbbrvSim)
+	r.StandardDevSim = sA * 100
+	round(&r.Similarity, &r.LPC.Similarity, &r.HPC.Similarity, &r.StandardDevSim)
 }
 
 func abs(n float64) float64 {

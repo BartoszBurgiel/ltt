@@ -11,14 +11,13 @@ import (
 // about scanned keys (clean up the Write() method)
 func (r *Report) prepare(keys []string) {
 	start := time.Now()
-	fmt.Println("Analysing keys...")
 
 	// GatherData for the report
+	fmt.Println("\nAnalysing keys...")
 	r.GatherData(keys)
 
-	fmt.Println("Calculating...")
-
 	startCalculation := time.Now()
+	fmt.Println("Calculating...")
 
 	// Calculate average
 	r.Avr /= float64(r.N)
@@ -104,8 +103,10 @@ func (r *Report) format() {
 	r.HC.PositionForm = form(r.HC.Position)
 }
 
+// custom rounding function
 func round(n ...*float64) {
 	for _, nn := range n {
+		// round and write to address
 		*nn = math.Round((*nn)*1000) / 1000
 	}
 }
@@ -114,13 +115,19 @@ func round(n ...*float64) {
 // that will be analysed later on
 func (r *Report) GatherData(keys []string) {
 	start := time.Now()
+	opTime := time.Now()
 	fmt.Println("Gathering additional data...")
 	for i, key := range keys {
 
+		// display progress bar
+		printProgressBar(i, len(keys)-1, opTime)
+		opTime = time.Now()
 		// If key not empty
 		if len(key) != 0 {
 			r.Update(key, i)
 		}
 	}
+	fmt.Println("")
+	// set time of gathering compeltion
 	r.GatheringDataTime = time.Now().Sub(start).String()
 }
